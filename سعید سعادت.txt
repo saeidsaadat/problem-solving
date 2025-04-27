@@ -1,47 +1,86 @@
 سعید سعادت
 
-# جمع دو عدد
 
-print(10 + 10)  # نتیجه: 20
+import math as mt
 
-# ضرب دو عدد
-print(10 * 10)  # نتیجه: 100
+def calculate_negative_log_ratio(x, y):
+    """
+    محاسبه منفی نسبت لگاریتمی x/y.
+    
+    :param x: عدد اول
+    :param y: عدد دوم
+    :return: نتیجه محاسبه
+    """
+    negative_log_ratio = -(x / y) * mt.log(x / y)
+    return negative_log_ratio
 
-# تقسیم دو عدد
-print(10 / 10)  # نتیجه: 1.0 (نتیجه همیشه به صورت اعشاری است)
+# مثال: محاسبه نسبت منفی لگاریتمی برای x=15 و y=3
+result_a = calculate_negative_log_ratio(15, 3) 
+print(f"نتیجه محاسبه نسبت منفی لگاریتمی: {result_a}") 
+# نتیجه: -11.075189562170502
 
-# تفریق دو عدد
-print(10 - 10)  # نتیجه: 0
 
-# باقیمانده تقسیم دو عدد
-print(10 % 10)  # نتیجه: 0 (باقیمانده تقسیم 10 بر 10)
+def calculate_logistic_function(x):
+    """
+    محاسبه تابع لجستیک.
+    
+    :param x: ورودی
+    :return: نتیجه تابع لجستیک
+    """
+    logistic_value = 1 / (1 + mt.exp(-x))
+    return logistic_value
 
-# توان یک عدد
-print(10 ** 2)  # نتیجه: 100 (10 به توان 2)
+# مثال: محاسبه تابع لجستیک برای x=5
+result_b = calculate_logistic_function(5) 
+print(f"نتیجه تابع لجستیک: {result_b}") 
+# نتیجه: 0.9933071490757153
 
-# نقیض یک شرط
-print(not (10 == 10))  # نتیجه: False (چون 10 برابر با 10 است)
 
-# عملگر OR برای دو شرط
-print((10 == 10) or (12 == 15))  # نتیجه: True (چون یکی از شروط درست است)
+def calculate_exponential_ratio(x):
+    """
+    محاسبه نسبت نمایی x به نمایی از x^2.
+    
+    :param x: ورودی
+    :return: نتیجه محاسبه
+    """
+    exponential_ratio = mt.exp(x) / mt.exp(mt.pow(x, 2))
+    return exponential_ratio
 
-# عملگر AND برای دو شرط
-print((10 == 10) and (4 == 3))  # نتیجه: False (چون یکی از شروط نادرست است)
+# مثال: محاسبه نسبت نمایی برای x=3
+result_c = calculate_exponential_ratio(3) 
+print(f"نتیجه نسبت نمایی: {result_c}") 
+# نتیجه: 0.049787068367863944
 
-# بررسی بزرگتر بودن
-print(8 < 10)  # نتیجه: True (8 کوچکتر از 10 است)
 
-# بررسی بزرگتر بودن
-print(12 > 5)  # نتیجه: True (12 بزرگتر از 5 است)
+def calculate_difference_ratio(x, y, y1):
+    """
+    محاسبه نسبت اختلاف بین y و y1 تقسیم بر x.
+    
+    :param x: عدد تقسیم کننده
+    :param y: عدد اول
+    :param y1: عدد دوم
+    :return: نتیجه محاسبه
+    """
+    difference_ratio = (1 / x) * (y - y1)
+    return difference_ratio
 
-# بررسی کوچکتر یا مساوی بودن
-print(5 <= 5)  # نتیجه: True (5 برابر با 5 است)
+# مثال: محاسبه نسبت اختلاف برای x=8، y=25 و y1=10
+result_d = calculate_difference_ratio(8, 25, 10) 
+print(f"نتیجه نسبت اختلاف: {result_d}") 
+# نتیجه: 1.875
 
-# بررسی بزرگتر یا مساوی بودن
-print(7 >= 8)  # نتیجه: False (7 کوچکتر از 8 است)
 
-# بررسی نابرابری
-print(10 != 10)  # نتیجه: False (چون 10 برابر با 10 است)
+def calculate_sqrt_log_product(x):
+    """
+    محاسبه جذر حاصلضرب x و لگاریتم طبیعی x.
+    
+    :param x: ورودی
+    :return: نتیجه محاسبه
+    """
+    sqrt_log_product = mt.sqrt(x * mt.log(x))
+    return sqrt_log_product
 
-# بررسی برابری
-print(7 == 7)  # نتیجه: True (چون 7 برابر با 7 است)
+# مثال: محاسبه جذر حاصلضرب برای x=20
+result_e = calculate_sqrt_log_product(20) 
+print(f"نتیجه جذر حاصلضرب: {result_e}") 
+# نتیجه: 8.206202703088088
