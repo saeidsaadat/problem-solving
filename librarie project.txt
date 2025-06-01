@@ -1,0 +1,62 @@
+# Importing necessary libraries
+import sys
+
+# Define a function to display the menu
+def display_menu():
+    print("\nWelcome to the Library Management System")
+    print("1. Add a book")
+    print("2. View all books")
+    print("3. Search for a book")
+    print("4. Exit")
+
+# Define a function to add a book
+def add_book(books):
+    title = input("Enter the book title: ")
+    author = input("Enter the author's name: ")
+    books.append((title, author))  # Using a tuple to store book information
+    print(f"Book '{title}' by {author} added successfully!")
+
+# Define a function to view all books
+def view_books(books):
+    if not books:
+        print("No books available.")
+        return
+    print("\nList of Books:")
+    for index, (title, author) in enumerate(books):
+        print(f"{index + 1}. {title} by {author}")
+
+# Define a function to search for a book
+def search_book(books):
+    search_term = input("Enter the title or author to search: ")
+    found_books = [book for book in books if search_term.lower() in book[0].lower() or search_term.lower() in book[1].lower()]
+    
+    if found_books:
+        print("\nSearch Results:")
+        for index, (title, author) in enumerate(found_books):
+            print(f"{index + 1}. {title} by {author}")
+    else:
+        print("No books found.")
+
+# Main function to run the program
+def main():
+    books = []  # List to store books
+
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            add_book(books)
+        elif choice == '2':
+            view_books(books)
+        elif choice == '3':
+            search_book(books)
+        elif choice == '4':
+            print("Exiting the program. Goodbye!")
+            sys.exit()
+        else:
+            print("Invalid choice. Please try again.")
+
+# Check if the script is being run directly
+if __name__ == "__main__":
+    main()
